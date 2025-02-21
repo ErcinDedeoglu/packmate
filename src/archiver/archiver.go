@@ -29,17 +29,19 @@ func processArchive(path string, outputDir string, customName string, compressio
 	// Determine the archive filename
 	var archiveFilename string
 	if customName != "" {
-		archiveFilename = customName + ".zip"
+		archiveFilename = customName
 	} else {
 		base64Path := base64.StdEncoding.EncodeToString([]byte(path))
-		archiveFilename = base64Path + ".zip"
+		archiveFilename = base64Path
 	}
 
+	// Construct the full archive path
 	archivePath := filepath.Join(outputDir, archiveFilename)
+
 	result := &ArchiveResult{
 		Path:             path,
 		ArchivePath:      archivePath,
-		CompressionLevel: compressionLevel, // Add this line
+		CompressionLevel: compressionLevel,
 	}
 
 	// Check if the path exists
@@ -49,7 +51,8 @@ func processArchive(path string, outputDir string, customName string, compressio
 		return result, nil
 	}
 
-	err := createArchive(path, archivePath, compressionLevel) // Pass compressionLevel here
+	// Create the archive
+	err := createArchive(path, archivePath, compressionLevel)
 	if err != nil {
 		os.Remove(archivePath)
 		result.Status = "Failed"

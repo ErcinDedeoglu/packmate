@@ -77,7 +77,7 @@ docker run --rm \
 ```json
 {
   "path": "/source",
-  "archivePath": "/output/backup-20250221.zip",
+  "archivePath": "/output/backup-20250221",
   "status": "Success",
   "compressionLevel": -2
 }
@@ -88,7 +88,7 @@ docker run --rm \
 Archive Creation Result:
 =======================
 ✅ Path: /source
-   Archive: /output/backup-20250221.zip
+   Archive: /output/backup-20250221
    Compression Level: -2
    Status: Success
 ```
