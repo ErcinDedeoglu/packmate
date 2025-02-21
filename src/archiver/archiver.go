@@ -150,21 +150,18 @@ func (w *NoCompression) Close() error {
 }
 
 func main() {
-	pathFlag := flag.String("path", "", "Path to archive")
-	outputFlag := flag.String("output", "", "Output directory for archive file")
+	// Fixed paths for Docker container
+	sourcePath := "/source"
+	outputPath := "/output"
+
+	// Only keep necessary flags
 	nameFlag := flag.String("name", "", "Custom name for the archive file (optional)")
 	outputFormat := flag.String("format", "json", "Output format: 'json' or 'text'")
 	compressionFlag := flag.Int("compression", -2,
 		"Compression level (-2: none (default), 1: best speed, 9: best compression)")
 	flag.Parse()
-	flag.Parse()
 
-	if *pathFlag == "" || *outputFlag == "" {
-		fmt.Println("Error: Both --path and --output are required")
-		return
-	}
-
-	result, err := processArchive(*pathFlag, *outputFlag, *nameFlag, *compressionFlag)
+	result, err := processArchive(sourcePath, outputPath, *nameFlag, *compressionFlag)
 	if err != nil {
 		fmt.Printf("Error: %v\n", err)
 		return

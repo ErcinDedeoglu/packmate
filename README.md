@@ -1,7 +1,6 @@
 <div align="center">
 
 # 🗄️ PackMate
-
 A high-performance, Docker-ready archiving tool for backing up Docker volumes and directories
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/dublok/packmate.svg)](https://hub.docker.com/r/dublok/packmate)
@@ -18,23 +17,18 @@ A high-performance, Docker-ready archiving tool for backing up Docker volumes an
 - **Safe Operations**: Read-only source handling and comprehensive error reporting
 
 ## 📋 Usage
-
 ### ⚡ Quick Start
 ```bash
 docker run --rm \
   -v /your/source/path:/source:ro \
   -v /your/backup/path:/output \
   dublok/packmate:latest \
-  --path /source \
-  --output /output \
   --name "backup-$(date +%Y%m%d)"
 ```
 
 ### 🎯 Parameters
 | Parameter | Description | Required | Default |
 |-----------|-------------|----------|---------|
-| `--path` | Source path to archive | Yes | - |
-| `--output` | Output directory for archive | Yes | - |
 | `--name` | Custom name for archive file | No | Base64 encoded path |
 | `--compression` | Compression level | No | -2 |
 | `--format` | Output format (json/text) | No | json |
@@ -47,15 +41,11 @@ docker run --rm \
 | `9` | Best compression | Smallest file size, slower compression |
 
 ## 💡 Examples
-
 ### Basic Backup (No Compression)
 ```bash
 docker run --rm \
-  -v /var/lib/docker/volumes/myapp_data/_data:/source:ro \
-  -v /backup:/output \
+  -v /var/lib/docker/volumes/myapp_data/_ /backup:/output \
   dublok/packmate:latest \
-  --path /source \
-  --output /output \
   --name "backup-$(date +%Y%m%d)"
 ```
 
@@ -65,14 +55,11 @@ docker run --rm \
   -v /var/lib/docker/volumes/myapp_data/_data:/source:ro \
   -v /backup:/output \
   dublok/packmate:latest \
-  --path /source \
-  --output /output \
   --name "backup-$(date +%Y%m%d)" \
   --compression 9
 ```
 
 ## 📤 Output Examples
-
 ### JSON Format
 ```json
 {
@@ -125,11 +112,9 @@ docker push your-registry/packmate:latest
 [![GitHub](https://img.shields.io/github/followers/ErcinDedeoglu?label=Follow&style=social)](https://github.com/ErcinDedeoglu)
 
 If you find this project useful, please consider giving it a ⭐
-
 </div>
 
 ---
-
 <div align="center">
 
 Made with ❤️ by [Ercin Dedeoglu](https://github.com/ErcinDedeoglu)
