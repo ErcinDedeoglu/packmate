@@ -1,9 +1,16 @@
-# PackMate
+Here's the enhanced version of your README.md combining both styles:
+<div align="center">
 
-PackMate is a high-performance, Docker-ready archiving tool designed specifically for backing up Docker volumes and directories. It offers flexible compression options and supports both JSON and human-readable outputs.
+# 🗄️ PackMate
+
+A high-performance, Docker-ready archiving tool for backing up Docker volumes and directories
+
+[![Docker Pulls](https://img.shields.io/docker/pulls/dublok/packmate.svg)](https://hub.docker.com/r/dublok/packmate)
+[![Docker Image Size](https://img.shields.io/docker/image-size/dublok/packmate/latest)](https://hub.docker.com/r/dublok/packmate)
+
+</div>
 
 ## 🚀 Features
-
 - **Fast & Efficient**: Optimized for handling large datasets with minimal resource usage
 - **Docker-Ready**: Purpose-built for Docker volume backups
 - **Configurable Compression**: Choose between no compression for speed or maximum compression for space savings
@@ -13,8 +20,7 @@ PackMate is a high-performance, Docker-ready archiving tool designed specificall
 
 ## 📋 Usage
 
-### Docker Command
-
+### ⚡ Quick Start
 ```bash
 docker run --rm \
   -v /your/source/path:/source:ro \
@@ -22,13 +28,10 @@ docker run --rm \
   dublok/packmate:latest \
   --path /source \
   --output /output \
-  --name "backup-$(date +%Y%m%d)" \
-  --compression -2 \
-  --format json
+  --name "backup-$(date +%Y%m%d)"
 ```
 
-### Parameters
-
+### 🎯 Parameters
 | Parameter | Description | Required | Default |
 |-----------|-------------|----------|---------|
 | `--path` | Source path to archive | Yes | - |
@@ -37,15 +40,16 @@ docker run --rm \
 | `--compression` | Compression level | No | -2 |
 | `--format` | Output format (json/text) | No | json |
 
-### Compression Levels
-
-- `-2`: No compression (default, fastest)
-- `1`: Best speed
-- `9`: Best compression
+### 📊 Compression Levels
+| Level | Description | Use Case |
+|-------|-------------|----------|
+| `-2` | No compression (default) | Fastest, best for already compressed data |
+| `1` | Best speed | Good balance for compressible data |
+| `9` | Best compression | Smallest file size, slower compression |
 
 ## 💡 Examples
 
-### Basic Backup with No Compression
+### Basic Backup (No Compression)
 ```bash
 docker run --rm \
   -v /var/lib/docker/volumes/myapp_data/_data:/source:ro \
@@ -66,17 +70,6 @@ docker run --rm \
   --output /output \
   --name "backup-$(date +%Y%m%d)" \
   --compression 9
-```
-
-### Human-Readable Output
-```bash
-docker run --rm \
-  -v /var/lib/docker/volumes/myapp_data/_data:/source:ro \
-  -v /backup:/output \
-  dublok/packmate:latest \
-  --path /source \
-  --output /output \
-  --format text
 ```
 
 ## 📤 Output Examples
@@ -101,14 +94,13 @@ Archive Creation Result:
    Status: Success
 ```
 
-## 🔒 Security
-
-- Source volumes are mounted read-only (`ro`)
+## 🔒 Security Features
+- Source volumes mounted read-only (`ro`)
 - No root privileges required
 - Minimal container footprint
+- Alpine-based secure base image
 
-## 🏗️ Building
-
+## 🏗️ Building from Source
 ```bash
 # Build the Docker image
 docker build -t packmate:latest -f src/Dockerfile src
@@ -118,24 +110,29 @@ docker tag packmate:latest your-registry/packmate:latest
 docker push your-registry/packmate:latest
 ```
 
-## 📦 Dependencies
-
+## ⚙️ Technical Specifications
 - Go 1.23+
-- Alpine Linux (base container)
+- Alpine Linux base
 - No external runtime dependencies
-
-## ⚙️ Technical Details
-
-- Written in Go for maximum performance
-- Uses efficient buffering for large files
+- Efficient buffering for large files
 - Minimal memory footprint
-- Docker multi-stage builds for smaller image size
+- Multi-stage Docker builds
 
-## 🤝 Contributing
+## 📫 Contact & Support
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+<div align="center">
 
-## ✨ Acknowledgments
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue.svg)](https://www.linkedin.com/in/ercindedeoglu/)
+[![GitHub](https://img.shields.io/github/followers/ErcinDedeoglu?label=Follow&style=social)](https://github.com/ErcinDedeoglu)
 
-- Inspired by the need for efficient Docker volume backups
-- Built with Go's standard library for maximum compatibility
+If you find this project useful, please consider giving it a ⭐
+
+</div>
+
+---
+
+<div align="center">
+
+Made with ❤️ by [Ercin Dedeoglu](https://github.com/ErcinDedeoglu)
+
+</div>
