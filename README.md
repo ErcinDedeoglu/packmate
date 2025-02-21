@@ -1,4 +1,3 @@
-Here's the enhanced version of your README.md combining both styles:
 <div align="center">
 
 # 🗄️ PackMate
