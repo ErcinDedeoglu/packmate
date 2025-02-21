@@ -1,108 +1,141 @@
 # PackMate
 
-PackMate is a lightweight and efficient Docker container utility designed to create ZIP archives from Docker volumes and directories. It provides a simple way to backup and archive data with both automatic and custom naming options.
+PackMate is a high-performance, Docker-ready archiving tool designed specifically for backing up Docker volumes and directories. It offers flexible compression options and supports both JSON and human-readable outputs.
 
-## Features
+## 🚀 Features
 
-- Create ZIP archives from any mounted directory
-- Support for custom archive names
-- Read-only source protection
-- JSON and text output formats
-- No compression option for faster archiving
-- Docker Hub and GitHub Container Registry support
+- **Fast & Efficient**: Optimized for handling large datasets with minimal resource usage
+- **Docker-Ready**: Purpose-built for Docker volume backups
+- **Configurable Compression**: Choose between no compression for speed or maximum compression for space savings
+- **Multiple Output Formats**: Support for both JSON and human-readable outputs
+- **Custom Naming**: Flexible archive naming options
+- **Safe Operations**: Read-only source handling and comprehensive error reporting
 
-## Installation
+## 📋 Usage
 
-Pull the image from Docker Hub:
-```bash
-docker pull dublok/packmate:latest
-```
-
-Or from GitHub Container Registry:
-```bash
-docker pull ghcr.io/ercindedeoglu/packmate:latest
-```
-
-## Usage
-
-### Basic Usage
+### Docker Command
 
 ```bash
 docker run --rm \
-  -v /path/to/source:/source:ro \
-  -v /path/to/output:/output \
+  -v /your/source/path:/source:ro \
+  -v /your/backup/path:/output \
   dublok/packmate:latest \
   --path /source \
   --output /output \
-  --format json
-```
-
-### With Custom Archive Name
-
-```bash
-docker run --rm \
-  -v /path/to/source:/source:ro \
-  -v /path/to/output:/output \
-  dublok/packmate:latest \
-  --path /source \
-  --output /output \
-  --name "my-backup" \
+  --name "backup-$(date +%Y%m%d)" \
+  --compression -2 \
   --format json
 ```
 
 ### Parameters
 
-- `--path`: Source directory to archive (required)
-- `--output`: Output directory for the archive (required)
-- `--name`: Custom name for the archive file (optional)
-- `--format`: Output format - 'json' or 'text' (default: json)
+| Parameter | Description | Required | Default |
+|-----------|-------------|----------|---------|
+| `--path` | Source path to archive | Yes | - |
+| `--output` | Output directory for archive | Yes | - |
+| `--name` | Custom name for archive file | No | Base64 encoded path |
+| `--compression` | Compression level | No | -2 |
+| `--format` | Output format (json/text) | No | json |
 
-### Example Output
+### Compression Levels
 
-JSON format:
-```json
-{
-  "path": "/source",
-  "archivePath": "/output/my-backup.zip",
-  "status": "Success"
-}
-```
+- `-2`: No compression (default, fastest)
+- `1`: Best speed
+- `9`: Best compression
 
-Text format:
-```
-Archive Creation Result:
-=======================
+## 💡 Examples
 
-✅ Path: /source
-   Archive: /output/my-backup.zip
-   Status: Success
-```
-
-## Docker Volume Backup Example
-
+### Basic Backup with No Compression
 ```bash
 docker run --rm \
-  -v your_volume_name:/source:ro \
-  -v /path/to/backups:/output \
+  -v /var/lib/docker/volumes/myapp_data/_data:/source:ro \
+  -v /backup:/output \
+  dublok/packmate:latest \
+  --path /source \
+  --output /output \
+  --name "backup-$(date +%Y%m%d)"
+```
+
+### Maximum Compression Backup
+```bash
+docker run --rm \
+  -v /var/lib/docker/volumes/myapp_data/_data:/source:ro \
+  -v /backup:/output \
   dublok/packmate:latest \
   --path /source \
   --output /output \
   --name "backup-$(date +%Y%m%d)" \
-  --format json
+  --compression 9
 ```
 
-## Building from Source
+### Human-Readable Output
+```bash
+docker run --rm \
+  -v /var/lib/docker/volumes/myapp_data/_data:/source:ro \
+  -v /backup:/output \
+  dublok/packmate:latest \
+  --path /source \
+  --output /output \
+  --format text
+```
+
+## 📤 Output Examples
+
+### JSON Format
+```json
+{
+  "path": "/source",
+  "archivePath": "/output/backup-20250221.zip",
+  "status": "Success",
+  "compressionLevel": -2
+}
+```
+
+### Text Format
+```
+Archive Creation Result:
+=======================
+✅ Path: /source
+   Archive: /output/backup-20250221.zip
+   Compression Level: -2
+   Status: Success
+```
+
+## 🔒 Security
+
+- Source volumes are mounted read-only (`ro`)
+- No root privileges required
+- Minimal container footprint
+
+## 🏗️ Building
 
 ```bash
-git clone https://github.com/ercindedeoglu/packmate.git
-cd packmate
+# Build the Docker image
 docker build -t packmate:latest -f src/Dockerfile src
+
+# Optional: Tag and push to your registry
+docker tag packmate:latest your-registry/packmate:latest
+docker push your-registry/packmate:latest
 ```
 
-## Contributing
+## 📦 Dependencies
+
+- Go 1.23+
+- Alpine Linux (base container)
+- No external runtime dependencies
+
+## ⚙️ Technical Details
+
+- Written in Go for maximum performance
+- Uses efficient buffering for large files
+- Minimal memory footprint
+- Docker multi-stage builds for smaller image size
+
+## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## Support
+## ✨ Acknowledgments
 
-If you encounter any issues or have questions, please file an issue on the GitHub repository.
+- Inspired by the need for efficient Docker volume backups
+- Built with Go's standard library for maximum compatibility
