@@ -37,7 +37,6 @@ func processArchive(path string, outputDir string, customName string, compressio
 
 	// Construct the full archive path
 	archivePath := filepath.Join(outputDir, archiveFilename)
-
 	result := &ArchiveResult{
 		Path:             path,
 		ArchivePath:      archivePath,
@@ -60,7 +59,6 @@ func processArchive(path string, outputDir string, customName string, compressio
 	} else {
 		result.Status = "Success"
 	}
-
 	return result, nil
 }
 
@@ -95,15 +93,48 @@ func createArchive(srcDir, archiveFile string, compressionLevel int) error {
 			return err
 		}
 
+		// Get relative path
+		relPath, err := filepath.Rel(srcDir, path)
+		if err != nil {
+			return fmt.Errorf("failed to get relative path: %w", err)
+		}
+
+		// Handle symlinks
+		if info.Mode()&os.ModeSymlink != 0 {
+			target, err := os.Readlink(path)
+			if err != nil {
+				return fmt.Errorf("failed to read symlink: %w", err)
+			}
+
+			// Create a symlink header
+			header, err := zip.FileInfoHeader(info)
+			if err != nil {
+				return fmt.Errorf("failed to create zip header: %w", err)
+			}
+			header.Name = relPath
+			header.Method = zip.Store // Symlinks are stored without compression
+			header.SetMode(os.ModeSymlink | info.Mode())
+
+			writer, err := zipWriter.CreateHeader(header)
+			if err != nil {
+				return fmt.Errorf("failed to write zip header: %w", err)
+			}
+
+			// Write the symlink target
+			_, err = writer.Write([]byte(target))
+			if err != nil {
+				return fmt.Errorf("failed to write symlink target: %w", err)
+			}
+
+			return nil
+		}
+
+		// Handle regular files and directories
 		header, err := zip.FileInfoHeader(info)
 		if err != nil {
 			return fmt.Errorf("failed to create zip header: %w", err)
 		}
-
-		header.Name, err = filepath.Rel(srcDir, path)
-		if err != nil {
-			return fmt.Errorf("failed to get relative path: %w", err)
-		}
+		header.Name = relPath
 
 		if info.IsDir() {
 			header.Name += "/"
@@ -150,23 +181,23 @@ func (w *NoCompression) Close() error {
 }
 
 func main() {
-	// Fixed paths for Docker container
-	sourcePath := "/source"
-	outputPath := "/output"
-
-	// Only keep necessary flags
+	// Define flags
+	sourceFlag := flag.String("source", "/source", "Source directory to archive (default: /source)")
+	outputFlag := flag.String("output", "/output", "Output directory for the archive (default: /output)")
 	nameFlag := flag.String("name", "", "Custom name for the archive file (optional)")
 	outputFormat := flag.String("format", "json", "Output format: 'json' or 'text'")
 	compressionFlag := flag.Int("compression", -2,
 		"Compression level (-2: none (default), 1: best speed, 9: best compression)")
 	flag.Parse()
 
-	result, err := processArchive(sourcePath, outputPath, *nameFlag, *compressionFlag)
+	// Process the archive
+	result, err := processArchive(*sourceFlag, *outputFlag, *nameFlag, *compressionFlag)
 	if err != nil {
 		fmt.Printf("Error: %v\n", err)
 		return
 	}
 
+	// Output the result
 	if *outputFormat == "json" {
 		jsonOutput, _ := json.MarshalIndent(result, "", "  ")
 		fmt.Println(string(jsonOutput))

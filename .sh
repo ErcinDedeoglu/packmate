@@ -1,21 +1,29 @@
 repomix --no-file-summary --no-security-check --include "src/Dockerfile,src/archiver/archiver.go" --output "repopack.yml"
 repomix --no-file-summary --no-security-check --include "README.md,src/Dockerfile,src/archiver/archiver.go" --output "repopack.yml"
 
-docker build -t dublok/packmate:latest -f src/Dockerfile src
+go build -o ./bin/archiver ./src/archiver/archiver.go
+go run ./src/archiver/archiver.go -source=/home/ercin/go -output=./output -compression=-2 -name=myarchive.zip -format=json
+go run ./src/archiver/archiver.go -source=/home/ercin/go -output=./output -compression=-2 -name=myarchive.zip -format=json
+
+docker build --progress=plain --no-cache -t dublok/packmate:latest -f src/Dockerfile src
 
 docker run --rm \
   -v /home/ercin/go:/source:ro \
-  -v /home/ercin/github/dublok/Docker-Volume-Backup/output:/output \
+  -v /home/ercin/github/ercindedeoglu/packmate/output:/output \
   dublok/packmate:latest \
   --name "backup-$(date +%Y%m%d)"
 
-
 docker run --rm \
   -v /var/lib/docker/volumes/docker-volume-test_test1_data/_data:/source:ro \
-  -v /home/ercin/output:/output \
+  -v /home/ercin/github/ercindedeoglu/packmate/output:/output \
   dublok/packmate:latest \
-  --name "backup-$(date +%Y%m%d)" \
-  --format json
+  --name "backup-$(date +%Y%m%d)"
+
+docker run --rm \
+  -v /var/lib/docker/volumes/docker-volume-test_test1_logs/_data:/source:ro \
+  -v /home/ercin/github/ercindedeoglu/packmate/output:/output \
+  dublok/packmate:latest \
+  --name "backup-$(date +%Y%m%d)"
 
   docker run --rm \
   -v /var/lib/docker/volumes/docker-volume-test_test1_data/_data:/source:ro \
