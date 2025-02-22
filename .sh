@@ -1,15 +1,64 @@
 repomix --no-file-summary --no-security-check --include "src/Dockerfile,src/archiver/archiver.go" --output "repopack.yml"
 repomix --no-file-summary --no-security-check --include "README.md,src/Dockerfile,src/archiver/archiver.go" --output "repopack.yml"
 
-go build -o ./bin/archiver ./src/archiver/archiver.go
+go build -o ../../bin/archiver ./archiver.go
 go run ./src/archiver/archiver.go -source=/home/ercin/go -output=./output -compression=-2 -name=myarchive.zip -format=json
 go run ./src/archiver/archiver.go -source=/home/ercin/go -output=./output -compression=-2 -name=myarchive.zip -format=json
+
+
+
 
 docker build --progress=plain --no-cache -t dublok/packmate:latest -f src/Dockerfile src
 
 docker run --rm \
-  -v /home/ercin/go:/source:ro \
+  -v /home/ercin/go:/source \
   -v /home/ercin/github/ercindedeoglu/packmate/output:/output \
+  dublok/packmate:latest \
+  -source=/source \
+  -output=/output \
+  -compression=0 \
+  -method=copy \
+  -multithreading=true \
+  -extra="-ms=off"
+
+
+  docker run --rm \
+  -v /home/ercin/github/ercindedeoglu/packmate/output:/source \
+  -v /home/ercin/github/ercindedeoglu/packmate/x:/output \
+  dublok/packmate:latest \
+  -source=/source \
+  -output=/output \
+  -compression=0 \
+  -method=copy \
+  -multithreading=true \
+  -extra="-ms=off"
+
+docker run --rm \
+  -v /home/ercin/go:/source \
+  -v /home/ercin/github/ercindedeoglu/packmate/output:/output \
+  dublok/packmate:latest \
+  -source=/source \
+  -output=/output \
+  -method=lzma2 \
+  -password=secret \
+  -header-encryption \  
+  -compression=9 \
+  -volume-size=100m
+
+  docker run --rm \
+  -v /home/ercin/go:/source \
+  -v /home/ercin/github/ercindedeoglu/packmate/output:/output \
+  dublok/packmate:latest \
+  -source=/source \
+  -output=/output \
+  -compression=0 \
+  -method=copy \
+  -multithreading=true \
+  -extra="-ms=off"
+
+docker run --rm \
+  -v /home/ercin/go:/source:ro \
+  -v /home/ercin/github/ercindedeoglu/packmate/output:/output \-
   dublok/packmate:latest \
   --name "backup-$(date +%Y%m%d)"
 
@@ -58,3 +107,9 @@ docker run --rm \
   --name "backup-max-compression" \
   --compression 9 \
   --format json
+
+  sudo chown -R ercin:ercin /home/ercin/github/ercindedeoglu/packmate/output
+
+  docker run --rm   -v /home/ercin/go:/source:ro   -v /home/ercin/github/ercindedeoglu/packmate/output:/output   dublok/packmate:latest   --name "backup-$(date +%Y%m%d)"
+
+  docker run --rm   -v /home/ercin/github/ercindedeoglu/packmate/output:/source:ro   -v /home/ercin/github/ercindedeoglu/packmate/x:/output   dublok/packmate:latest   --name "backup-$(date +%Y%m%d)"

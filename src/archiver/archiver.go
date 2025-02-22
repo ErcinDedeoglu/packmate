@@ -1,15 +1,14 @@
 package main
 
 import (
-	"archive/zip"
-	"compress/flate"
 	"encoding/base64"
 	"encoding/json"
 	"flag"
 	"fmt"
-	"io"
 	"os"
+	"os/exec"
 	"path/filepath"
+	"strings"
 )
 
 type ArchiveResult struct {
@@ -20,7 +19,7 @@ type ArchiveResult struct {
 	CompressionLevel int    `json:"compressionLevel"`
 }
 
-func processArchive(path string, outputDir string, customName string, compressionLevel int) (*ArchiveResult, error) {
+func processArchive(path, outputDir, customName string, compressionLevel int, extraFlags []string) (*ArchiveResult, error) {
 	if err := os.MkdirAll(outputDir, os.ModePerm); err != nil {
 		return nil, fmt.Errorf("error creating output directory: %v", err)
 	}
@@ -36,7 +35,7 @@ func processArchive(path string, outputDir string, customName string, compressio
 	}
 
 	// Construct the full archive path
-	archivePath := filepath.Join(outputDir, archiveFilename)
+	archivePath := filepath.Join(outputDir, archiveFilename+".7z")
 	result := &ArchiveResult{
 		Path:             path,
 		ArchivePath:      archivePath,
@@ -50,8 +49,8 @@ func processArchive(path string, outputDir string, customName string, compressio
 		return result, nil
 	}
 
-	// Create the archive
-	err := createArchive(path, archivePath, compressionLevel)
+	// Create the archive using p7zip
+	err := create7zArchive(path, archivePath, compressionLevel, extraFlags)
 	if err != nil {
 		os.Remove(archivePath)
 		result.Status = "Failed"
@@ -62,121 +61,25 @@ func processArchive(path string, outputDir string, customName string, compressio
 	return result, nil
 }
 
-func createArchive(srcDir, archiveFile string, compressionLevel int) error {
-	file, err := os.Create(archiveFile)
+func create7zArchive(srcDir, archiveFile string, compressionLevel int, extraFlags []string) error {
+	// Define the base command
+	args := []string{"a", "-t7z"}
+
+	// Add compression level flag
+	args = append(args, fmt.Sprintf("-mx=%d", compressionLevel))
+
+	// Add extra flags (e.g., -ms=off, -m0=copy, etc.)
+	args = append(args, extraFlags...)
+
+	// Add the archive file and source directory
+	args = append(args, archiveFile, srcDir)
+
+	// Execute the 7z command
+	cmd := exec.Command("7z", args...)
+	output, err := cmd.CombinedOutput()
 	if err != nil {
-		return fmt.Errorf("failed to create archive file: %w", err)
+		return fmt.Errorf("failed to create 7z archive: %s\n%s", err, string(output))
 	}
-	defer file.Close()
-
-	zipWriter := zip.NewWriter(file)
-	defer zipWriter.Close()
-
-	// Set compression level based on parameter
-	if compressionLevel == -2 {
-		// No compression
-		zipWriter.RegisterCompressor(zip.Deflate, func(out io.Writer) (io.WriteCloser, error) {
-			return &NoCompression{out}, nil
-		})
-	} else {
-		// Use specified compression level
-		zipWriter.RegisterCompressor(zip.Deflate, func(out io.Writer) (io.WriteCloser, error) {
-			return flate.NewWriter(out, compressionLevel)
-		})
-	}
-
-	const bufferSize = 4 * 1024 * 1024 // 4MB buffer
-	buffer := make([]byte, bufferSize)
-
-	err = filepath.Walk(srcDir, func(path string, info os.FileInfo, err error) error {
-		if err != nil {
-			return err
-		}
-
-		// Get relative path
-		relPath, err := filepath.Rel(srcDir, path)
-		if err != nil {
-			return fmt.Errorf("failed to get relative path: %w", err)
-		}
-
-		// Handle symlinks
-		if info.Mode()&os.ModeSymlink != 0 {
-			target, err := os.Readlink(path)
-			if err != nil {
-				return fmt.Errorf("failed to read symlink: %w", err)
-			}
-
-			// Create a symlink header
-			header, err := zip.FileInfoHeader(info)
-			if err != nil {
-				return fmt.Errorf("failed to create zip header: %w", err)
-			}
-			header.Name = relPath
-			header.Method = zip.Store // Symlinks are stored without compression
-			header.SetMode(os.ModeSymlink | info.Mode())
-
-			writer, err := zipWriter.CreateHeader(header)
-			if err != nil {
-				return fmt.Errorf("failed to write zip header: %w", err)
-			}
-
-			// Write the symlink target
-			_, err = writer.Write([]byte(target))
-			if err != nil {
-				return fmt.Errorf("failed to write symlink target: %w", err)
-			}
-
-			return nil
-		}
-
-		// Handle regular files and directories
-		header, err := zip.FileInfoHeader(info)
-		if err != nil {
-			return fmt.Errorf("failed to create zip header: %w", err)
-		}
-		header.Name = relPath
-
-		if info.IsDir() {
-			header.Name += "/"
-		} else {
-			header.Method = zip.Deflate
-		}
-
-		writer, err := zipWriter.CreateHeader(header)
-		if err != nil {
-			return fmt.Errorf("failed to write zip header: %w", err)
-		}
-
-		if !info.IsDir() {
-			data, err := os.Open(path)
-			if err != nil {
-				return fmt.Errorf("failed to open file: %w", err)
-			}
-			defer data.Close()
-
-			// Use buffered copy
-			_, err = io.CopyBuffer(writer, data, buffer)
-			if err != nil {
-				return fmt.Errorf("failed to copy file content: %w", err)
-			}
-		}
-
-		return nil
-	})
-
-	return err
-}
-
-// NoCompression implements a writer that doesn't compress data
-type NoCompression struct {
-	w io.Writer
-}
-
-func (w *NoCompression) Write(p []byte) (n int, err error) {
-	return w.w.Write(p)
-}
-
-func (w *NoCompression) Close() error {
 	return nil
 }
 
@@ -186,12 +89,39 @@ func main() {
 	outputFlag := flag.String("output", "/output", "Output directory for the archive (default: /output)")
 	nameFlag := flag.String("name", "", "Custom name for the archive file (optional)")
 	outputFormat := flag.String("format", "json", "Output format: 'json' or 'text'")
-	compressionFlag := flag.Int("compression", -2,
-		"Compression level (-2: none (default), 1: best speed, 9: best compression)")
+	compressionFlag := flag.Int("compression", 5, "Compression level (0: none, 1: best speed, 9: best compression)")
+	methodFlag := flag.String("method", "", "Compression method (e.g., lzma2, ppmd)")
+	passwordFlag := flag.String("password", "", "Password for encrypting the archive")
+	headerEncryptionFlag := flag.Bool("header-encryption", false, "Enable header encryption")
+	volumeSizeFlag := flag.String("volume-size", "", "Create multi-volume archive with specified size (e.g., 100m)")
+	threadsFlag := flag.Bool("multithreading", true, "Enable multithreading")
+	extraFlag := flag.String("extra", "", "Additional p7zip flags (e.g., -ms=off)")
+
 	flag.Parse()
 
+	// Build extra flags for p7zip
+	extraFlags := []string{}
+	if *methodFlag != "" {
+		extraFlags = append(extraFlags, fmt.Sprintf("-m0=%s", *methodFlag))
+	}
+	if *passwordFlag != "" {
+		extraFlags = append(extraFlags, fmt.Sprintf("-p%s", *passwordFlag))
+		if *headerEncryptionFlag {
+			extraFlags = append(extraFlags, "-mhe=on")
+		}
+	}
+	if *volumeSizeFlag != "" {
+		extraFlags = append(extraFlags, fmt.Sprintf("-v%s", *volumeSizeFlag))
+	}
+	if !*threadsFlag {
+		extraFlags = append(extraFlags, "-mt=off")
+	}
+	if *extraFlag != "" {
+		extraFlags = append(extraFlags, strings.Split(*extraFlag, " ")...)
+	}
+
 	// Process the archive
-	result, err := processArchive(*sourceFlag, *outputFlag, *nameFlag, *compressionFlag)
+	result, err := processArchive(*sourceFlag, *outputFlag, *nameFlag, *compressionFlag, extraFlags)
 	if err != nil {
 		fmt.Printf("Error: %v\n", err)
 		return
