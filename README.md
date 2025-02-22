@@ -8,15 +8,25 @@ A high-performance, Docker-ready archiving tool for backing up Docker volumes an
 </div>
 
 ## 🚀 Features
-- **Fast & Efficient**: Optimized for handling large datasets with minimal resource usage  
-- **Docker-Ready**: Purpose-built for Docker volume backups  
-- **Configurable Compression**: Choose between no compression for speed or maximum compression for space savings  
-- **Advanced Parameters**: Support for custom compression methods, multi-volume archives, encryption, and more  
-- **Multiple Output Formats**: Support for both JSON and human-readable outputs  
-- **Custom Naming**: Flexible archive naming options  
-- **Safe Operations**: Read-only source handling and comprehensive error reporting  
+- **Performance**:  
+  - Fast & Efficient: Optimized for handling large datasets with minimal resource usage  
+  - Safe Operations: Read-only source handling and comprehensive error reporting  
+
+- **Flexibility**:  
+  - Configurable Compression: Choose between no compression for speed or maximum compression for space savings  
+  - Advanced Parameters: Support for custom compression methods, multi-volume archives, encryption, and more  
+
+- **Output Options**:  
+  - Multiple Output Formats: Support for both JSON and human-readable outputs  
+  - Custom Naming: Flexible archive naming options  
+
+- **Docker Integration**:  
+  - Purpose-built for Docker volume backups  
+  - Minimal container footprint with Alpine-based secure base image  
 
 ## 📋 Usage
+PackMate provides a simple CLI interface for creating archives. Below are examples and parameter details to help you get started.
+
 ### ⚡ Quick Start
 ```bash
 docker run --rm \

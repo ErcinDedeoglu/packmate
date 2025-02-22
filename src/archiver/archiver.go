@@ -43,14 +43,22 @@ func processArchive(path, outputDir, customName string, compressionLevel int, ex
 	}
 
 	// Check if the path exists
-	if _, err := os.Stat(path); os.IsNotExist(err) {
+	fileInfo, err := os.Stat(path)
+	if os.IsNotExist(err) {
 		result.Status = "Failed"
 		result.Error = fmt.Sprintf("path does not exist: %s", path)
 		return result, nil
 	}
 
+	// If the source is a directory, append a wildcard (*) to include only its contents
+	if fileInfo.IsDir() {
+		path += "/*" // Append wildcard to include only the contents of the directory
+		fmt.Printf("Appending wildcard to directory path: %s\n", path)
+	}
+
 	// Create the archive using p7zip
-	err := create7zArchive(path, archivePath, compressionLevel, extraFlags)
+	fmt.Printf("Executing 7z command with source path: %s\n", path)
+	err = create7zArchive(path, archivePath, compressionLevel, extraFlags)
 	if err != nil {
 		os.Remove(archivePath)
 		result.Status = "Failed"
@@ -73,6 +81,9 @@ func create7zArchive(srcDir, archiveFile string, compressionLevel int, extraFlag
 
 	// Add the archive file and source directory
 	args = append(args, archiveFile, srcDir)
+
+	// Log the full command for debugging
+	fmt.Printf("Running 7z command: 7z %s\n", strings.Join(args, " "))
 
 	// Execute the 7z command
 	cmd := exec.Command("7z", args...)

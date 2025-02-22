@@ -2,7 +2,7 @@ repomix --no-file-summary --no-security-check --include "src/Dockerfile,src/arch
 repomix --no-file-summary --no-security-check --include "README.md,src/Dockerfile,src/archiver/archiver.go" --output "repopack.yml"
 
 go build -o ../../bin/archiver ./archiver.go
-go run ./src/archiver/archiver.go -source=/home/ercin/go -output=./output -compression=-2 -name=myarchive.zip -format=json
+go run ./src/archiver/archiver.go -source=/var/lib/docker/volumes/docker-volume-test_test1_data/_data -output=./output
 go run ./src/archiver/archiver.go -source=/home/ercin/go -output=./output -compression=-2 -name=myarchive.zip -format=json
 
 
@@ -11,7 +11,7 @@ go run ./src/archiver/archiver.go -source=/home/ercin/go -output=./output -compr
 docker build --progress=plain --no-cache -t dublok/packmate:latest -f src/Dockerfile src
 
 docker run --rm \
-  -v /home/ercin/go:/source \
+  -v /var/lib/docker/volumes/docker-volume-test_test1_data/_data:/source \
   -v /home/ercin/github/ercindedeoglu/packmate/output:/output \
   dublok/packmate:latest \
   -source=/source \
