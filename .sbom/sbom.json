@@ -1573,7 +1573,7 @@
       "locations": [
         {
           "path": "/usr/local/bin/archiver",
-          "layerID": "sha256:ecf46d215de4d64acb4da988e2be7e0e8b796e491b8eabb181ef3ec911708218",
+          "layerID": "sha256:834c67ae49ddb7a26021c0b1331fccc62f4e8b0979f6eb3233dc5028f635daf6",
           "accessPath": "/usr/local/bin/archiver",
           "annotations": {
             "evidence": "primary"
@@ -4328,7 +4328,7 @@
       "locations": [
         {
           "path": "/usr/local/bin/archiver",
-          "layerID": "sha256:ecf46d215de4d64acb4da988e2be7e0e8b796e491b8eabb181ef3ec911708218",
+          "layerID": "sha256:834c67ae49ddb7a26021c0b1331fccc62f4e8b0979f6eb3233dc5028f635daf6",
           "accessPath": "/usr/local/bin/archiver",
           "annotations": {
             "evidence": "primary"
@@ -4512,107 +4512,107 @@
       }
     },
     {
-      "parent": "234c1405495c0c9ed057726aa77ba0158f908cc034e94062a3d06f8a60590325",
+      "parent": "353b1d7a727323cb34c64d311e707502b3017f7345b9289b0070e4fc9b4c5570",
       "child": "1b755d45cb2df26e",
       "type": "contains"
     },
     {
-      "parent": "234c1405495c0c9ed057726aa77ba0158f908cc034e94062a3d06f8a60590325",
+      "parent": "353b1d7a727323cb34c64d311e707502b3017f7345b9289b0070e4fc9b4c5570",
       "child": "21ee65b39126f7ac",
       "type": "contains"
     },
     {
-      "parent": "234c1405495c0c9ed057726aa77ba0158f908cc034e94062a3d06f8a60590325",
+      "parent": "353b1d7a727323cb34c64d311e707502b3017f7345b9289b0070e4fc9b4c5570",
       "child": "3f63eb64a79c1189",
       "type": "contains"
     },
     {
-      "parent": "234c1405495c0c9ed057726aa77ba0158f908cc034e94062a3d06f8a60590325",
+      "parent": "353b1d7a727323cb34c64d311e707502b3017f7345b9289b0070e4fc9b4c5570",
       "child": "4cdf6e36df19cc09",
       "type": "contains"
     },
     {
-      "parent": "234c1405495c0c9ed057726aa77ba0158f908cc034e94062a3d06f8a60590325",
+      "parent": "353b1d7a727323cb34c64d311e707502b3017f7345b9289b0070e4fc9b4c5570",
       "child": "4dede6ab874f8148",
       "type": "contains"
     },
     {
-      "parent": "234c1405495c0c9ed057726aa77ba0158f908cc034e94062a3d06f8a60590325",
+      "parent": "353b1d7a727323cb34c64d311e707502b3017f7345b9289b0070e4fc9b4c5570",
       "child": "5732e2d080a0a28c",
       "type": "contains"
     },
     {
-      "parent": "234c1405495c0c9ed057726aa77ba0158f908cc034e94062a3d06f8a60590325",
+      "parent": "353b1d7a727323cb34c64d311e707502b3017f7345b9289b0070e4fc9b4c5570",
       "child": "5dd53a4dcb46e28e",
       "type": "contains"
     },
     {
-      "parent": "234c1405495c0c9ed057726aa77ba0158f908cc034e94062a3d06f8a60590325",
+      "parent": "353b1d7a727323cb34c64d311e707502b3017f7345b9289b0070e4fc9b4c5570",
       "child": "5e649c7c3eb5dfed",
       "type": "contains"
     },
     {
-      "parent": "234c1405495c0c9ed057726aa77ba0158f908cc034e94062a3d06f8a60590325",
+      "parent": "353b1d7a727323cb34c64d311e707502b3017f7345b9289b0070e4fc9b4c5570",
       "child": "5fd65cff212b51aa",
       "type": "contains"
     },
     {
-      "parent": "234c1405495c0c9ed057726aa77ba0158f908cc034e94062a3d06f8a60590325",
+      "parent": "353b1d7a727323cb34c64d311e707502b3017f7345b9289b0070e4fc9b4c5570",
       "child": "641201b6e05dde0f",
       "type": "contains"
     },
     {
-      "parent": "234c1405495c0c9ed057726aa77ba0158f908cc034e94062a3d06f8a60590325",
+      "parent": "353b1d7a727323cb34c64d311e707502b3017f7345b9289b0070e4fc9b4c5570",
       "child": "6cadff4303b9c142",
       "type": "contains"
     },
     {
-      "parent": "234c1405495c0c9ed057726aa77ba0158f908cc034e94062a3d06f8a60590325",
+      "parent": "353b1d7a727323cb34c64d311e707502b3017f7345b9289b0070e4fc9b4c5570",
       "child": "84efb3a8cf5f4e8d",
       "type": "contains"
     },
     {
-      "parent": "234c1405495c0c9ed057726aa77ba0158f908cc034e94062a3d06f8a60590325",
+      "parent": "353b1d7a727323cb34c64d311e707502b3017f7345b9289b0070e4fc9b4c5570",
       "child": "86cf615978380604",
       "type": "contains"
     },
     {
-      "parent": "234c1405495c0c9ed057726aa77ba0158f908cc034e94062a3d06f8a60590325",
+      "parent": "353b1d7a727323cb34c64d311e707502b3017f7345b9289b0070e4fc9b4c5570",
       "child": "b43ec24d06556ebc",
       "type": "contains"
     },
     {
-      "parent": "234c1405495c0c9ed057726aa77ba0158f908cc034e94062a3d06f8a60590325",
+      "parent": "353b1d7a727323cb34c64d311e707502b3017f7345b9289b0070e4fc9b4c5570",
       "child": "bdb7f2c637679326",
       "type": "contains"
     },
     {
-      "parent": "234c1405495c0c9ed057726aa77ba0158f908cc034e94062a3d06f8a60590325",
+      "parent": "353b1d7a727323cb34c64d311e707502b3017f7345b9289b0070e4fc9b4c5570",
       "child": "c1faa35efa11da10",
       "type": "contains"
     },
     {
-      "parent": "234c1405495c0c9ed057726aa77ba0158f908cc034e94062a3d06f8a60590325",
+      "parent": "353b1d7a727323cb34c64d311e707502b3017f7345b9289b0070e4fc9b4c5570",
       "child": "cd1596a99504840a",
       "type": "contains"
     },
     {
-      "parent": "234c1405495c0c9ed057726aa77ba0158f908cc034e94062a3d06f8a60590325",
+      "parent": "353b1d7a727323cb34c64d311e707502b3017f7345b9289b0070e4fc9b4c5570",
       "child": "cf899a9c1dd9b2c1",
       "type": "contains"
     },
     {
-      "parent": "234c1405495c0c9ed057726aa77ba0158f908cc034e94062a3d06f8a60590325",
+      "parent": "353b1d7a727323cb34c64d311e707502b3017f7345b9289b0070e4fc9b4c5570",
       "child": "d8b802483dfb52ac",
       "type": "contains"
     },
     {
-      "parent": "234c1405495c0c9ed057726aa77ba0158f908cc034e94062a3d06f8a60590325",
+      "parent": "353b1d7a727323cb34c64d311e707502b3017f7345b9289b0070e4fc9b4c5570",
       "child": "df9568c4577ae077",
       "type": "contains"
     },
     {
-      "parent": "234c1405495c0c9ed057726aa77ba0158f908cc034e94062a3d06f8a60590325",
+      "parent": "353b1d7a727323cb34c64d311e707502b3017f7345b9289b0070e4fc9b4c5570",
       "child": "e0326841c471a81b",
       "type": "contains"
     },
@@ -4670,7 +4670,7 @@
     },
     {
       "parent": "4dede6ab874f8148",
-      "child": "7e14e8a961a03e90",
+      "child": "91f8e9f1d6e659d0",
       "type": "evident-by",
       "metadata": {
         "kind": "primary"
@@ -6163,7 +6163,7 @@
     },
     {
       "parent": "df9568c4577ae077",
-      "child": "7e14e8a961a03e90",
+      "child": "91f8e9f1d6e659d0",
       "type": "evident-by",
       "metadata": {
         "kind": "primary"
@@ -8389,10 +8389,10 @@
       ]
     },
     {
-      "id": "7e14e8a961a03e90",
+      "id": "91f8e9f1d6e659d0",
       "location": {
         "path": "/usr/local/bin/archiver",
-        "layerID": "sha256:ecf46d215de4d64acb4da988e2be7e0e8b796e491b8eabb181ef3ec911708218"
+        "layerID": "sha256:834c67ae49ddb7a26021c0b1331fccc62f4e8b0979f6eb3233dc5028f635daf6"
       },
       "metadata": {
         "mode": 755,
@@ -8405,11 +8405,11 @@
       "digests": [
         {
           "algorithm": "sha1",
-          "value": "25b746765181c2c794c8a2a320d51bef39e67a48"
+          "value": "444c66e70547517f27f1b9dc35031f16e59d1452"
         },
         {
           "algorithm": "sha256",
-          "value": "29715299ec22c0fe0df9c08bbb6ebe8bd7df9f0b26ace159e1ab1a138be5a3e0"
+          "value": "9f5b9b36bd6f2e1b8e158626a9f3c52cf49d7e55ce1bd5dca0f19cda51b94b3b"
         }
       ],
       "executable": {
@@ -12670,17 +12670,17 @@
     }
   ],
   "source": {
-    "id": "234c1405495c0c9ed057726aa77ba0158f908cc034e94062a3d06f8a60590325",
+    "id": "353b1d7a727323cb34c64d311e707502b3017f7345b9289b0070e4fc9b4c5570",
     "name": "ghcr.io/ercindedeoglu/packmate",
-    "version": "d52bfe8",
+    "version": "e113896",
     "type": "image",
     "metadata": {
-      "userInput": "ghcr.io/ercindedeoglu/packmate:d52bfe8",
-      "imageID": "sha256:74269ae9eb1aef5466900be7f1edd54eae2424a29a313c6b124312cf593f2019",
-      "manifestDigest": "sha256:234c1405495c0c9ed057726aa77ba0158f908cc034e94062a3d06f8a60590325",
+      "userInput": "ghcr.io/ercindedeoglu/packmate:e113896",
+      "imageID": "sha256:4f7a7aeb199c2071512592bfc2b2c236e7e0a854fee29a6c1af587460879ae9a",
+      "manifestDigest": "sha256:353b1d7a727323cb34c64d311e707502b3017f7345b9289b0070e4fc9b4c5570",
       "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
       "tags": [
-        "ghcr.io/ercindedeoglu/packmate:d52bfe8"
+        "ghcr.io/ercindedeoglu/packmate:e113896"
       ],
       "imageSize": 15028505,
       "layers": [
@@ -12696,21 +12696,21 @@
         },
         {
           "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
-          "digest": "sha256:ecf46d215de4d64acb4da988e2be7e0e8b796e491b8eabb181ef3ec911708218",
+          "digest": "sha256:834c67ae49ddb7a26021c0b1331fccc62f4e8b0979f6eb3233dc5028f635daf6",
           "size": 1970328
         }
       ],
-      "manifest": "eyJzY2hlbWFWZXJzaW9uIjoyLCJtZWRpYVR5cGUiOiJhcHBsaWNhdGlvbi92bmQuZG9ja2VyLmRpc3RyaWJ1dGlvbi5tYW5pZmVzdC52Mitqc29uIiwiY29uZmlnIjp7Im1lZGlhVHlwZSI6ImFwcGxpY2F0aW9uL3ZuZC5kb2NrZXIuY29udGFpbmVyLmltYWdlLnYxK2pzb24iLCJzaXplIjoxMzY3LCJkaWdlc3QiOiJzaGEyNTY6NzQyNjlhZTllYjFhZWY1NDY2OTAwYmU3ZjFlZGQ1NGVhZTI0MjRhMjlhMzEzYzZiMTI0MzEyY2Y1OTNmMjAxOSJ9LCJsYXllcnMiOlt7Im1lZGlhVHlwZSI6ImFwcGxpY2F0aW9uL3ZuZC5kb2NrZXIuaW1hZ2Uucm9vdGZzLmRpZmYudGFyLmd6aXAiLCJzaXplIjo4MTIwODMyLCJkaWdlc3QiOiJzaGEyNTY6MDgwMDBjMThkMTZkYWRmOTU1M2Q3NDdhNThjZjQ0MDIzNDIzYTlhYjAxMGFhYjk2Y2YyNjNkMjIxNmI4YjM1MCJ9LHsibWVkaWFUeXBlIjoiYXBwbGljYXRpb24vdm5kLmRvY2tlci5pbWFnZS5yb290ZnMuZGlmZi50YXIuZ3ppcCIsInNpemUiOjU1MTIxOTIsImRpZ2VzdCI6InNoYTI1NjowYzliYzNlN2U2NzI4ZDZiZjczYjE5MWEyNTAzOTJlMDVjNDE0OTAxZWNmZWMwNThjNWNkNzZiMTYxYjBiYzNhIn0seyJtZWRpYVR5cGUiOiJhcHBsaWNhdGlvbi92bmQuZG9ja2VyLmltYWdlLnJvb3Rmcy5kaWZmLnRhci5nemlwIiwic2l6ZSI6MTk3Mzc2MCwiZGlnZXN0Ijoic2hhMjU2OmVjZjQ2ZDIxNWRlNGQ2NGFjYjRkYTk4OGUyYmU3ZTBlOGI3OTZlNDkxYjhlYWJiMTgxZWYzZWM5MTE3MDgyMTgifV19",
-      "config": "eyJhcmNoaXRlY3R1cmUiOiJhbWQ2NCIsImNvbmZpZyI6eyJFbnYiOlsiUEFUSD0vdXNyL2xvY2FsL3NiaW46L3Vzci9sb2NhbC9iaW46L3Vzci9zYmluOi91c3IvYmluOi9zYmluOi9iaW4iXSwiRW50cnlwb2ludCI6WyJhcmNoaXZlciJdLCJXb3JraW5nRGlyIjoiLyIsIkxhYmVscyI6eyJvcmcub3BlbmNvbnRhaW5lcnMuaW1hZ2Uuc291cmNlIjoiaHR0cHM6Ly9naXRodWIuY29tL0VyY2luRGVkZW9nbHUvcGFja21hdGUiLCJvcmcub3BlbmNvbnRhaW5lcnMuaW1hZ2UudGl0bGUiOiJwYWNrbWF0ZSIsIm9yZy5vcGVuY29udGFpbmVycy5pbWFnZS52ZXJzaW9uIjoidjEuMC45In19LCJjcmVhdGVkIjoiMjAyNS0wMy0xOFQxNjozMzozOS4xNTQ0MjQwMjhaIiwiaGlzdG9yeSI6W3siY3JlYXRlZCI6IjIwMjUtMDItMTRUMDM6Mjg6MzZaIiwiY3JlYXRlZF9ieSI6IkFERCBhbHBpbmUtbWluaXJvb3Rmcy0zLjIxLjMteDg2XzY0LnRhci5neiAvICMgYnVpbGRraXQiLCJjb21tZW50IjoiYnVpbGRraXQuZG9ja2VyZmlsZS52MCJ9LHsiY3JlYXRlZCI6IjIwMjUtMDItMTRUMDM6Mjg6MzZaIiwiY3JlYXRlZF9ieSI6IkNNRCBbXCIvYmluL3NoXCJdIiwiY29tbWVudCI6ImJ1aWxka2l0LmRvY2tlcmZpbGUudjAiLCJlbXB0eV9sYXllciI6dHJ1ZX0seyJjcmVhdGVkIjoiMjAyNS0wMi0yN1QwMDoyNDo1OS45MzczNjg4MDFaIiwiY3JlYXRlZF9ieSI6IlJVTiAvYmluL3NoIC1jIGFwayAtLW5vLWNhY2hlIGFkZCBjYS1jZXJ0aWZpY2F0ZXMgcDd6aXAgIyBidWlsZGtpdCIsImNvbW1lbnQiOiJidWlsZGtpdC5kb2NrZXJmaWxlLnYwIn0seyJjcmVhdGVkIjoiMjAyNS0wMy0xOFQxNjozMzozOS4xNTQ0MjQwMjhaIiwiY3JlYXRlZF9ieSI6IkNPUFkgL2FwcC9hcmNoaXZlciAvdXNyL2xvY2FsL2Jpbi8gIyBidWlsZGtpdCIsImNvbW1lbnQiOiJidWlsZGtpdC5kb2NrZXJmaWxlLnYwIn0seyJjcmVhdGVkIjoiMjAyNS0wMy0xOFQxNjozMzozOS4xNTQ0MjQwMjhaIiwiY3JlYXRlZF9ieSI6IkVOVFJZUE9JTlQgW1wiYXJjaGl2ZXJcIl0iLCJjb21tZW50IjoiYnVpbGRraXQuZG9ja2VyZmlsZS52MCIsImVtcHR5X2xheWVyIjp0cnVlfV0sIm9zIjoibGludXgiLCJyb290ZnMiOnsidHlwZSI6ImxheWVycyIsImRpZmZfaWRzIjpbInNoYTI1NjowODAwMGMxOGQxNmRhZGY5NTUzZDc0N2E1OGNmNDQwMjM0MjNhOWFiMDEwYWFiOTZjZjI2M2QyMjE2YjhiMzUwIiwic2hhMjU2OjBjOWJjM2U3ZTY3MjhkNmJmNzNiMTkxYTI1MDM5MmUwNWM0MTQ5MDFlY2ZlYzA1OGM1Y2Q3NmIxNjFiMGJjM2EiLCJzaGEyNTY6ZWNmNDZkMjE1ZGU0ZDY0YWNiNGRhOTg4ZTJiZTdlMGU4Yjc5NmU0OTFiOGVhYmIxODFlZjNlYzkxMTcwODIxOCJdfX0=",
+      "manifest": "eyJzY2hlbWFWZXJzaW9uIjoyLCJtZWRpYVR5cGUiOiJhcHBsaWNhdGlvbi92bmQuZG9ja2VyLmRpc3RyaWJ1dGlvbi5tYW5pZmVzdC52Mitqc29uIiwiY29uZmlnIjp7Im1lZGlhVHlwZSI6ImFwcGxpY2F0aW9uL3ZuZC5kb2NrZXIuY29udGFpbmVyLmltYWdlLnYxK2pzb24iLCJzaXplIjoxMzY4LCJkaWdlc3QiOiJzaGEyNTY6NGY3YTdhZWIxOTljMjA3MTUxMjU5MmJmYzJiMmMyMzZlN2UwYTg1NGZlZTI5YTZjMWFmNTg3NDYwODc5YWU5YSJ9LCJsYXllcnMiOlt7Im1lZGlhVHlwZSI6ImFwcGxpY2F0aW9uL3ZuZC5kb2NrZXIuaW1hZ2Uucm9vdGZzLmRpZmYudGFyLmd6aXAiLCJzaXplIjo4MTIwODMyLCJkaWdlc3QiOiJzaGEyNTY6MDgwMDBjMThkMTZkYWRmOTU1M2Q3NDdhNThjZjQ0MDIzNDIzYTlhYjAxMGFhYjk2Y2YyNjNkMjIxNmI4YjM1MCJ9LHsibWVkaWFUeXBlIjoiYXBwbGljYXRpb24vdm5kLmRvY2tlci5pbWFnZS5yb290ZnMuZGlmZi50YXIuZ3ppcCIsInNpemUiOjU1MTIxOTIsImRpZ2VzdCI6InNoYTI1NjowYzliYzNlN2U2NzI4ZDZiZjczYjE5MWEyNTAzOTJlMDVjNDE0OTAxZWNmZWMwNThjNWNkNzZiMTYxYjBiYzNhIn0seyJtZWRpYVR5cGUiOiJhcHBsaWNhdGlvbi92bmQuZG9ja2VyLmltYWdlLnJvb3Rmcy5kaWZmLnRhci5nemlwIiwic2l6ZSI6MTk3Mzc2MCwiZGlnZXN0Ijoic2hhMjU2OjgzNGM2N2FlNDlkZGI3YTI2MDIxYzBiMTMzMWZjY2M2MmY0ZThiMDk3OWY2ZWIzMjMzZGM1MDI4ZjYzNWRhZjYifV19",
+      "config": "eyJhcmNoaXRlY3R1cmUiOiJhbWQ2NCIsImNvbmZpZyI6eyJFbnYiOlsiUEFUSD0vdXNyL2xvY2FsL3NiaW46L3Vzci9sb2NhbC9iaW46L3Vzci9zYmluOi91c3IvYmluOi9zYmluOi9iaW4iXSwiRW50cnlwb2ludCI6WyJhcmNoaXZlciJdLCJXb3JraW5nRGlyIjoiLyIsIkxhYmVscyI6eyJvcmcub3BlbmNvbnRhaW5lcnMuaW1hZ2Uuc291cmNlIjoiaHR0cHM6Ly9naXRodWIuY29tL0VyY2luRGVkZW9nbHUvcGFja21hdGUiLCJvcmcub3BlbmNvbnRhaW5lcnMuaW1hZ2UudGl0bGUiOiJwYWNrbWF0ZSIsIm9yZy5vcGVuY29udGFpbmVycy5pbWFnZS52ZXJzaW9uIjoidjEuMC4xMCJ9fSwiY3JlYXRlZCI6IjIwMjUtMDMtMThUMTc6MjQ6NTYuMDM3MDkwMDI2WiIsImhpc3RvcnkiOlt7ImNyZWF0ZWQiOiIyMDI1LTAyLTE0VDAzOjI4OjM2WiIsImNyZWF0ZWRfYnkiOiJBREQgYWxwaW5lLW1pbmlyb290ZnMtMy4yMS4zLXg4Nl82NC50YXIuZ3ogLyAjIGJ1aWxka2l0IiwiY29tbWVudCI6ImJ1aWxka2l0LmRvY2tlcmZpbGUudjAifSx7ImNyZWF0ZWQiOiIyMDI1LTAyLTE0VDAzOjI4OjM2WiIsImNyZWF0ZWRfYnkiOiJDTUQgW1wiL2Jpbi9zaFwiXSIsImNvbW1lbnQiOiJidWlsZGtpdC5kb2NrZXJmaWxlLnYwIiwiZW1wdHlfbGF5ZXIiOnRydWV9LHsiY3JlYXRlZCI6IjIwMjUtMDItMjdUMDA6MjQ6NTkuOTM3MzY4ODAxWiIsImNyZWF0ZWRfYnkiOiJSVU4gL2Jpbi9zaCAtYyBhcGsgLS1uby1jYWNoZSBhZGQgY2EtY2VydGlmaWNhdGVzIHA3emlwICMgYnVpbGRraXQiLCJjb21tZW50IjoiYnVpbGRraXQuZG9ja2VyZmlsZS52MCJ9LHsiY3JlYXRlZCI6IjIwMjUtMDMtMThUMTc6MjQ6NTYuMDM3MDkwMDI2WiIsImNyZWF0ZWRfYnkiOiJDT1BZIC9hcHAvYXJjaGl2ZXIgL3Vzci9sb2NhbC9iaW4vICMgYnVpbGRraXQiLCJjb21tZW50IjoiYnVpbGRraXQuZG9ja2VyZmlsZS52MCJ9LHsiY3JlYXRlZCI6IjIwMjUtMDMtMThUMTc6MjQ6NTYuMDM3MDkwMDI2WiIsImNyZWF0ZWRfYnkiOiJFTlRSWVBPSU5UIFtcImFyY2hpdmVyXCJdIiwiY29tbWVudCI6ImJ1aWxka2l0LmRvY2tlcmZpbGUudjAiLCJlbXB0eV9sYXllciI6dHJ1ZX1dLCJvcyI6ImxpbnV4Iiwicm9vdGZzIjp7InR5cGUiOiJsYXllcnMiLCJkaWZmX2lkcyI6WyJzaGEyNTY6MDgwMDBjMThkMTZkYWRmOTU1M2Q3NDdhNThjZjQ0MDIzNDIzYTlhYjAxMGFhYjk2Y2YyNjNkMjIxNmI4YjM1MCIsInNoYTI1NjowYzliYzNlN2U2NzI4ZDZiZjczYjE5MWEyNTAzOTJlMDVjNDE0OTAxZWNmZWMwNThjNWNkNzZiMTYxYjBiYzNhIiwic2hhMjU2OjgzNGM2N2FlNDlkZGI3YTI2MDIxYzBiMTMzMWZjY2M2MmY0ZThiMDk3OWY2ZWIzMjMzZGM1MDI4ZjYzNWRhZjYiXX19",
       "repoDigests": [
-        "ghcr.io/ercindedeoglu/packmate@sha256:ccb78f84af68ff895886451744db245aec31d023e0ddcc7b19292f872fbb1550"
+        "ghcr.io/ercindedeoglu/packmate@sha256:7c6e8f2beedf80bee0f5415261c06556e82296b3f78e7a4c1df2014e98ec1131"
       ],
       "architecture": "amd64",
       "os": "linux",
       "labels": {
         "org.opencontainers.image.source": "https://github.com/ErcinDedeoglu/packmate",
         "org.opencontainers.image.title": "packmate",
-        "org.opencontainers.image.version": "v1.0.9"
+        "org.opencontainers.image.version": "v1.0.10"
       }
     }
   },
