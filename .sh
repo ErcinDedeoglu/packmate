@@ -113,3 +113,9 @@ docker run --rm \
   docker run --rm   -v /home/ercin/go:/source:ro   -v /home/ercin/github/ercindedeoglu/packmate/output:/output   dublok/packmate:latest   --name "backup-$(date +%Y%m%d)"
 
   docker run --rm   -v /home/ercin/github/ercindedeoglu/packmate/output:/source:ro   -v /home/ercin/github/ercindedeoglu/packmate/x:/output   dublok/packmate:latest   --name "backup-$(date +%Y%m%d)"
+
+  docker run --rm \
+  -v /var/lib/docker/volumes/mysql-8_mysql/_data:/source:ro \
+  -v /root/packmate-test:/output \
+  dublok/packmate:latest \
+  --name "backup-$(date +%Y%m%d)"
