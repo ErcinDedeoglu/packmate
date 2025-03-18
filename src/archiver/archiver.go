@@ -74,7 +74,8 @@ func create7zArchive(srcDir, archiveFile string, compressionLevel int, extraFlag
 	args := []string{"a", "-t7z"}
 
 	// Ensure the 7z command continues even if it encounters warnings (like broken symlinks)
-	args = append(args, "-sse", "-ssw-")
+	args = append(args, "-sse")  // Stop on serious errors
+	args = append(args, "-ssc-") // Disable case-sensitive mode (this is a common flag)
 
 	// Add compression level flag
 	args = append(args, fmt.Sprintf("-mx=%d", compressionLevel))
