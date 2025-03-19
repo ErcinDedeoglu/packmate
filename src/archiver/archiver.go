@@ -73,28 +73,36 @@ func create7zArchive(srcDir, archiveFile string, compressionLevel int, extraFlag
 	// Define the base command
 	args := []string{"a", "-t7z"}
 
-	// Ensure the 7z command continues even if it encounters warnings (like broken symlinks)
-	args = append(args, "-sse")  // Stop on serious errors
-	args = append(args, "-ssc-") // Disable case-sensitive mode (this is a common flag)
+	// Add -y flag to automatically answer "yes" to queries
+	args = append(args, "-y")
+
+	// Add -bb0 to disable log output for adding files to archive
+	args = append(args, "-bb0")
 
 	// Add compression level flag
 	args = append(args, fmt.Sprintf("-mx=%d", compressionLevel))
 
-	// Add extra flags (e.g., -ms=off, -m0=copy, etc.)
+	// Add extra flags
 	args = append(args, extraFlags...)
 
 	// Add the archive file and source directory
 	args = append(args, archiveFile, srcDir)
 
-	// Log the full command for debugging
 	fmt.Printf("Running 7z command: 7z %s\n", strings.Join(args, " "))
 
-	// Execute the 7z command
 	cmd := exec.Command("7z", args...)
 	output, err := cmd.CombinedOutput()
+
+	// Check if archive was actually created despite warnings
+	if _, statErr := os.Stat(archiveFile); statErr == nil {
+		// Archive exists, so consider it a success even with warnings
+		return nil
+	}
+
 	if err != nil {
 		return fmt.Errorf("failed to create 7z archive: %s\n%s", err, string(output))
 	}
+
 	return nil
 }
 
