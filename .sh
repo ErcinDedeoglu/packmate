@@ -8,7 +8,7 @@ go run ./src/archiver/archiver.go -source=/home/ercin/go -output=./output -compr
 
 
 
-docker build --progress=plain --no-cache -t dublok/packmate:latest -f src/Dockerfile src
+docker build --progress=plain --no-cache -t dublok/packmate:latest -f src/Dockerfile src && docker push dublok/packmate:latest
 
 docker run --rm \
   -v /var/lib/docker/volumes/docker-volume-test_test1_data/_data:/source \

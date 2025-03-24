@@ -17,6 +17,7 @@ type ArchiveResult struct {
 	Status           string `json:"status"`
 	Error            string `json:"error,omitempty"`
 	CompressionLevel int    `json:"compressionLevel"`
+	VolumeSize       string `json:"volumeSize,omitempty"`
 }
 
 func processArchive(path, outputDir, customName string, compressionLevel int, extraFlags []string) (*ArchiveResult, error) {
@@ -150,6 +151,11 @@ func main() {
 		return
 	}
 
+	// Add volume size to result if specified
+	if *volumeSizeFlag != "" {
+		result.VolumeSize = *volumeSizeFlag
+	}
+
 	// Output the result
 	if *outputFormat == "json" {
 		jsonOutput, _ := json.MarshalIndent(result, "", "  ")
@@ -161,12 +167,18 @@ func main() {
 			fmt.Printf("\n❌ Path: %s\n", result.Path)
 			fmt.Printf("   Archive: %s\n", result.ArchivePath)
 			fmt.Printf("   Compression Level: %d\n", result.CompressionLevel)
+			if result.VolumeSize != "" {
+				fmt.Printf("   Volume Size: %s\n", result.VolumeSize)
+			}
 			fmt.Printf("   Status: %s\n", result.Status)
 			fmt.Printf("   Error: %s\n", result.Error)
 		} else {
 			fmt.Printf("\n✅ Path: %s\n", result.Path)
 			fmt.Printf("   Archive: %s\n", result.ArchivePath)
 			fmt.Printf("   Compression Level: %d\n", result.CompressionLevel)
+			if result.VolumeSize != "" {
+				fmt.Printf("   Volume Size: %s\n", result.VolumeSize)
+			}
 			fmt.Printf("   Status: %s\n", result.Status)
 		}
 	}
