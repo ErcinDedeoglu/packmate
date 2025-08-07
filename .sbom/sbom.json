@@ -1542,7 +1542,7 @@
       }
     },
     {
-      "id": "1f8e315dfc06efac",
+      "id": "d4f7bbd8c9d635e2",
       "name": "archiver",
       "version": "(devel)",
       "type": "go-module",
@@ -1550,7 +1550,7 @@
       "locations": [
         {
           "path": "/usr/local/bin/archiver",
-          "layerID": "sha256:1eed3ea1693e2b0b20949a181bf72ceae8fb9100956b04be860cfa9b23a55b09",
+          "layerID": "sha256:2d2234d364fd6cda8186f7621ab061065c6c6c920977a01553a4ec572983a7b5",
           "accessPath": "/usr/local/bin/archiver",
           "annotations": {
             "evidence": "primary"
@@ -1597,7 +1597,7 @@
             "value": "v1"
           }
         ],
-        "goCompiledVersion": "go1.23.11",
+        "goCompiledVersion": "go1.23.12",
         "architecture": "amd64",
         "mainModule": "archiver"
       }
@@ -4363,15 +4363,15 @@
       }
     },
     {
-      "id": "2ce028602664abf4",
+      "id": "3dd714e07b91face",
       "name": "stdlib",
-      "version": "go1.23.11",
+      "version": "go1.23.12",
       "type": "go-module",
       "foundBy": "go-module-binary-cataloger",
       "locations": [
         {
           "path": "/usr/local/bin/archiver",
-          "layerID": "sha256:1eed3ea1693e2b0b20949a181bf72ceae8fb9100956b04be860cfa9b23a55b09",
+          "layerID": "sha256:2d2234d364fd6cda8186f7621ab061065c6c6c920977a01553a4ec572983a7b5",
           "accessPath": "/usr/local/bin/archiver",
           "annotations": {
             "evidence": "primary"
@@ -4390,14 +4390,14 @@
       "language": "go",
       "cpes": [
         {
-          "cpe": "cpe:2.3:a:golang:go:1.23.11:-:*:*:*:*:*:*",
+          "cpe": "cpe:2.3:a:golang:go:1.23.12:-:*:*:*:*:*:*",
           "source": "syft-generated"
         }
       ],
-      "purl": "pkg:golang/stdlib@1.23.11",
+      "purl": "pkg:golang/stdlib@1.23.12",
       "metadataType": "go-module-buildinfo-entry",
       "metadata": {
-        "goCompiledVersion": "go1.23.11",
+        "goCompiledVersion": "go1.23.12",
         "architecture": ""
       }
     },
@@ -4532,14 +4532,6 @@
       "type": "contains"
     },
     {
-      "parent": "1f8e315dfc06efac",
-      "child": "c6dbd65d8b3d98c2",
-      "type": "evident-by",
-      "metadata": {
-        "kind": "primary"
-      }
-    },
-    {
       "parent": "22d7eab5fc975368",
       "child": "280eca7c1abd7615",
       "type": "contains"
@@ -4571,13 +4563,123 @@
       "type": "dependency-of"
     },
     {
-      "parent": "2ce028602664abf4",
-      "child": "1f8e315dfc06efac",
+      "parent": "3034d5059dad550b2cf9f548631f2f2ddf9aac83977acfdf5fd34ca003196801",
+      "child": "01aa01a57427541c",
+      "type": "contains"
+    },
+    {
+      "parent": "3034d5059dad550b2cf9f548631f2f2ddf9aac83977acfdf5fd34ca003196801",
+      "child": "22d7eab5fc975368",
+      "type": "contains"
+    },
+    {
+      "parent": "3034d5059dad550b2cf9f548631f2f2ddf9aac83977acfdf5fd34ca003196801",
+      "child": "3dd714e07b91face",
+      "type": "contains"
+    },
+    {
+      "parent": "3034d5059dad550b2cf9f548631f2f2ddf9aac83977acfdf5fd34ca003196801",
+      "child": "54c2c5601142a843",
+      "type": "contains"
+    },
+    {
+      "parent": "3034d5059dad550b2cf9f548631f2f2ddf9aac83977acfdf5fd34ca003196801",
+      "child": "5bbd33fc8d83b1f9",
+      "type": "contains"
+    },
+    {
+      "parent": "3034d5059dad550b2cf9f548631f2f2ddf9aac83977acfdf5fd34ca003196801",
+      "child": "76145d2aa8fc6935",
+      "type": "contains"
+    },
+    {
+      "parent": "3034d5059dad550b2cf9f548631f2f2ddf9aac83977acfdf5fd34ca003196801",
+      "child": "8661f95150c1e2b6",
+      "type": "contains"
+    },
+    {
+      "parent": "3034d5059dad550b2cf9f548631f2f2ddf9aac83977acfdf5fd34ca003196801",
+      "child": "8a794da1c89bf371",
+      "type": "contains"
+    },
+    {
+      "parent": "3034d5059dad550b2cf9f548631f2f2ddf9aac83977acfdf5fd34ca003196801",
+      "child": "91cc93442a7f5542",
+      "type": "contains"
+    },
+    {
+      "parent": "3034d5059dad550b2cf9f548631f2f2ddf9aac83977acfdf5fd34ca003196801",
+      "child": "92f1c92a9074224f",
+      "type": "contains"
+    },
+    {
+      "parent": "3034d5059dad550b2cf9f548631f2f2ddf9aac83977acfdf5fd34ca003196801",
+      "child": "947b47aee5a2834d",
+      "type": "contains"
+    },
+    {
+      "parent": "3034d5059dad550b2cf9f548631f2f2ddf9aac83977acfdf5fd34ca003196801",
+      "child": "99ba95aea389299e",
+      "type": "contains"
+    },
+    {
+      "parent": "3034d5059dad550b2cf9f548631f2f2ddf9aac83977acfdf5fd34ca003196801",
+      "child": "9bcbedc562989282",
+      "type": "contains"
+    },
+    {
+      "parent": "3034d5059dad550b2cf9f548631f2f2ddf9aac83977acfdf5fd34ca003196801",
+      "child": "aae57179ea2ecbdb",
+      "type": "contains"
+    },
+    {
+      "parent": "3034d5059dad550b2cf9f548631f2f2ddf9aac83977acfdf5fd34ca003196801",
+      "child": "cfe69b4a62092d22",
+      "type": "contains"
+    },
+    {
+      "parent": "3034d5059dad550b2cf9f548631f2f2ddf9aac83977acfdf5fd34ca003196801",
+      "child": "d1ee23833e5fddca",
+      "type": "contains"
+    },
+    {
+      "parent": "3034d5059dad550b2cf9f548631f2f2ddf9aac83977acfdf5fd34ca003196801",
+      "child": "d4f7bbd8c9d635e2",
+      "type": "contains"
+    },
+    {
+      "parent": "3034d5059dad550b2cf9f548631f2f2ddf9aac83977acfdf5fd34ca003196801",
+      "child": "df47a2b29e419453",
+      "type": "contains"
+    },
+    {
+      "parent": "3034d5059dad550b2cf9f548631f2f2ddf9aac83977acfdf5fd34ca003196801",
+      "child": "e951ea5b4f42d125",
+      "type": "contains"
+    },
+    {
+      "parent": "3034d5059dad550b2cf9f548631f2f2ddf9aac83977acfdf5fd34ca003196801",
+      "child": "f076a2e80e2ba59b",
+      "type": "contains"
+    },
+    {
+      "parent": "3034d5059dad550b2cf9f548631f2f2ddf9aac83977acfdf5fd34ca003196801",
+      "child": "f9d711457bcf3e1a",
+      "type": "contains"
+    },
+    {
+      "parent": "3034d5059dad550b2cf9f548631f2f2ddf9aac83977acfdf5fd34ca003196801",
+      "child": "fb2cdf0bca4cda85",
+      "type": "contains"
+    },
+    {
+      "parent": "3dd714e07b91face",
+      "child": "d4f7bbd8c9d635e2",
       "type": "dependency-of"
     },
     {
-      "parent": "2ce028602664abf4",
-      "child": "c6dbd65d8b3d98c2",
+      "parent": "3dd714e07b91face",
+      "child": "d6704b690997602a",
       "type": "evident-by",
       "metadata": {
         "kind": "primary"
@@ -5134,116 +5236,6 @@
       "type": "contains"
     },
     {
-      "parent": "c500b19d20902440d6132f2f6cc3b711b24ca4aebcca04752078cfa6a5400e3c",
-      "child": "01aa01a57427541c",
-      "type": "contains"
-    },
-    {
-      "parent": "c500b19d20902440d6132f2f6cc3b711b24ca4aebcca04752078cfa6a5400e3c",
-      "child": "1f8e315dfc06efac",
-      "type": "contains"
-    },
-    {
-      "parent": "c500b19d20902440d6132f2f6cc3b711b24ca4aebcca04752078cfa6a5400e3c",
-      "child": "22d7eab5fc975368",
-      "type": "contains"
-    },
-    {
-      "parent": "c500b19d20902440d6132f2f6cc3b711b24ca4aebcca04752078cfa6a5400e3c",
-      "child": "2ce028602664abf4",
-      "type": "contains"
-    },
-    {
-      "parent": "c500b19d20902440d6132f2f6cc3b711b24ca4aebcca04752078cfa6a5400e3c",
-      "child": "54c2c5601142a843",
-      "type": "contains"
-    },
-    {
-      "parent": "c500b19d20902440d6132f2f6cc3b711b24ca4aebcca04752078cfa6a5400e3c",
-      "child": "5bbd33fc8d83b1f9",
-      "type": "contains"
-    },
-    {
-      "parent": "c500b19d20902440d6132f2f6cc3b711b24ca4aebcca04752078cfa6a5400e3c",
-      "child": "76145d2aa8fc6935",
-      "type": "contains"
-    },
-    {
-      "parent": "c500b19d20902440d6132f2f6cc3b711b24ca4aebcca04752078cfa6a5400e3c",
-      "child": "8661f95150c1e2b6",
-      "type": "contains"
-    },
-    {
-      "parent": "c500b19d20902440d6132f2f6cc3b711b24ca4aebcca04752078cfa6a5400e3c",
-      "child": "8a794da1c89bf371",
-      "type": "contains"
-    },
-    {
-      "parent": "c500b19d20902440d6132f2f6cc3b711b24ca4aebcca04752078cfa6a5400e3c",
-      "child": "91cc93442a7f5542",
-      "type": "contains"
-    },
-    {
-      "parent": "c500b19d20902440d6132f2f6cc3b711b24ca4aebcca04752078cfa6a5400e3c",
-      "child": "92f1c92a9074224f",
-      "type": "contains"
-    },
-    {
-      "parent": "c500b19d20902440d6132f2f6cc3b711b24ca4aebcca04752078cfa6a5400e3c",
-      "child": "947b47aee5a2834d",
-      "type": "contains"
-    },
-    {
-      "parent": "c500b19d20902440d6132f2f6cc3b711b24ca4aebcca04752078cfa6a5400e3c",
-      "child": "99ba95aea389299e",
-      "type": "contains"
-    },
-    {
-      "parent": "c500b19d20902440d6132f2f6cc3b711b24ca4aebcca04752078cfa6a5400e3c",
-      "child": "9bcbedc562989282",
-      "type": "contains"
-    },
-    {
-      "parent": "c500b19d20902440d6132f2f6cc3b711b24ca4aebcca04752078cfa6a5400e3c",
-      "child": "aae57179ea2ecbdb",
-      "type": "contains"
-    },
-    {
-      "parent": "c500b19d20902440d6132f2f6cc3b711b24ca4aebcca04752078cfa6a5400e3c",
-      "child": "cfe69b4a62092d22",
-      "type": "contains"
-    },
-    {
-      "parent": "c500b19d20902440d6132f2f6cc3b711b24ca4aebcca04752078cfa6a5400e3c",
-      "child": "d1ee23833e5fddca",
-      "type": "contains"
-    },
-    {
-      "parent": "c500b19d20902440d6132f2f6cc3b711b24ca4aebcca04752078cfa6a5400e3c",
-      "child": "df47a2b29e419453",
-      "type": "contains"
-    },
-    {
-      "parent": "c500b19d20902440d6132f2f6cc3b711b24ca4aebcca04752078cfa6a5400e3c",
-      "child": "e951ea5b4f42d125",
-      "type": "contains"
-    },
-    {
-      "parent": "c500b19d20902440d6132f2f6cc3b711b24ca4aebcca04752078cfa6a5400e3c",
-      "child": "f076a2e80e2ba59b",
-      "type": "contains"
-    },
-    {
-      "parent": "c500b19d20902440d6132f2f6cc3b711b24ca4aebcca04752078cfa6a5400e3c",
-      "child": "f9d711457bcf3e1a",
-      "type": "contains"
-    },
-    {
-      "parent": "c500b19d20902440d6132f2f6cc3b711b24ca4aebcca04752078cfa6a5400e3c",
-      "child": "fb2cdf0bca4cda85",
-      "type": "contains"
-    },
-    {
       "parent": "cfe69b4a62092d22",
       "child": "4a7680b45f6bf3b3",
       "type": "evident-by",
@@ -5306,6 +5298,14 @@
       "parent": "d1ee23833e5fddca",
       "child": "e2f5042783cee3ef",
       "type": "contains"
+    },
+    {
+      "parent": "d4f7bbd8c9d635e2",
+      "child": "d6704b690997602a",
+      "type": "evident-by",
+      "metadata": {
+        "kind": "primary"
+      }
     },
     {
       "parent": "df47a2b29e419453",
@@ -8407,10 +8407,10 @@
       ]
     },
     {
-      "id": "c6dbd65d8b3d98c2",
+      "id": "d6704b690997602a",
       "location": {
         "path": "/usr/local/bin/archiver",
-        "layerID": "sha256:1eed3ea1693e2b0b20949a181bf72ceae8fb9100956b04be860cfa9b23a55b09"
+        "layerID": "sha256:2d2234d364fd6cda8186f7621ab061065c6c6c920977a01553a4ec572983a7b5"
       },
       "metadata": {
         "mode": 755,
@@ -8418,16 +8418,16 @@
         "userID": 0,
         "groupID": 0,
         "mimeType": "application/x-executable",
-        "size": 1970328
+        "size": 1974424
       },
       "digests": [
         {
           "algorithm": "sha1",
-          "value": "b45d04bf51a3af628c19ccb9d4f1cfe38532c23b"
+          "value": "71c93202ea2336bcbb38208d5a2ce43d25f03298"
         },
         {
           "algorithm": "sha256",
-          "value": "5f808f335bc0e3bbdca62d43a0e1db7835bf6cac7ba159f8d66c07a53c6cef64"
+          "value": "be2d51d9e56f49f5e2d68bac736113b3f45f3a3516bce7844e1d0fd7506dcb8b"
         }
       ],
       "executable": {
@@ -12513,19 +12513,19 @@
     }
   ],
   "source": {
-    "id": "c500b19d20902440d6132f2f6cc3b711b24ca4aebcca04752078cfa6a5400e3c",
+    "id": "3034d5059dad550b2cf9f548631f2f2ddf9aac83977acfdf5fd34ca003196801",
     "name": "ghcr.io/ercindedeoglu/packmate",
-    "version": "04bad86",
+    "version": "ac8d85f",
     "type": "image",
     "metadata": {
-      "userInput": "ghcr.io/ercindedeoglu/packmate:04bad86",
-      "imageID": "sha256:e9150950ee973edb11e79718a21af873d86c730b6a8bb5ba879b7c3d5231907d",
-      "manifestDigest": "sha256:c500b19d20902440d6132f2f6cc3b711b24ca4aebcca04752078cfa6a5400e3c",
+      "userInput": "ghcr.io/ercindedeoglu/packmate:ac8d85f",
+      "imageID": "sha256:73b68bffdef3dea584122f6cc05869a004ba55cc6687356c41a61f765df40349",
+      "manifestDigest": "sha256:3034d5059dad550b2cf9f548631f2f2ddf9aac83977acfdf5fd34ca003196801",
       "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
       "tags": [
-        "ghcr.io/ercindedeoglu/packmate:04bad86"
+        "ghcr.io/ercindedeoglu/packmate:ac8d85f"
       ],
-      "imageSize": 15501644,
+      "imageSize": 15505740,
       "layers": [
         {
           "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
@@ -12539,21 +12539,21 @@
         },
         {
           "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
-          "digest": "sha256:1eed3ea1693e2b0b20949a181bf72ceae8fb9100956b04be860cfa9b23a55b09",
-          "size": 1970328
+          "digest": "sha256:2d2234d364fd6cda8186f7621ab061065c6c6c920977a01553a4ec572983a7b5",
+          "size": 1974424
         }
       ],
-      "manifest": "eyJzY2hlbWFWZXJzaW9uIjoyLCJtZWRpYVR5cGUiOiJhcHBsaWNhdGlvbi92bmQuZG9ja2VyLmRpc3RyaWJ1dGlvbi5tYW5pZmVzdC52Mitqc29uIiwiY29uZmlnIjp7Im1lZGlhVHlwZSI6ImFwcGxpY2F0aW9uL3ZuZC5kb2NrZXIuY29udGFpbmVyLmltYWdlLnYxK2pzb24iLCJzaXplIjoxMzY1LCJkaWdlc3QiOiJzaGEyNTY6ZTkxNTA5NTBlZTk3M2VkYjExZTc5NzE4YTIxYWY4NzNkODZjNzMwYjZhOGJiNWJhODc5YjdjM2Q1MjMxOTA3ZCJ9LCJsYXllcnMiOlt7Im1lZGlhVHlwZSI6ImFwcGxpY2F0aW9uL3ZuZC5kb2NrZXIuaW1hZ2Uucm9vdGZzLmRpZmYudGFyLmd6aXAiLCJzaXplIjo4NTk2NDgwLCJkaWdlc3QiOiJzaGEyNTY6NDE4ZGNjYjdkODVhNjNhNmFhNTc0NDM5ODQwZjdhNmZhNmZkMjMyMWIzZTIzOTQ1NjhhMzE3NzM1ZTg2N2QzNSJ9LHsibWVkaWFUeXBlIjoiYXBwbGljYXRpb24vdm5kLmRvY2tlci5pbWFnZS5yb290ZnMuZGlmZi50YXIuZ3ppcCIsInNpemUiOjU0OTY4MzIsImRpZ2VzdCI6InNoYTI1Njo3NTE0NmVhNGJiMmMzZDYwNjI3ZmMwY2U1YzVhODkwOTMwNDk2MmE2NDQwM2UxMDFkOGFjOTA3NjUwYzRkOWM2In0seyJtZWRpYVR5cGUiOiJhcHBsaWNhdGlvbi92bmQuZG9ja2VyLmltYWdlLnJvb3Rmcy5kaWZmLnRhci5nemlwIiwic2l6ZSI6MTk3Mzc2MCwiZGlnZXN0Ijoic2hhMjU2OjFlZWQzZWExNjkzZTJiMGIyMDk0OWExODFiZjcyY2VhZThmYjkxMDA5NTZiMDRiZTg2MGNmYTliMjNhNTViMDkifV19",
-      "config": "eyJhcmNoaXRlY3R1cmUiOiJhbWQ2NCIsImNvbmZpZyI6eyJFbnYiOlsiUEFUSD0vdXNyL2xvY2FsL3NiaW46L3Vzci9sb2NhbC9iaW46L3Vzci9zYmluOi91c3IvYmluOi9zYmluOi9iaW4iXSwiRW50cnlwb2ludCI6WyJhcmNoaXZlciJdLCJXb3JraW5nRGlyIjoiLyIsIkxhYmVscyI6eyJvcmcub3BlbmNvbnRhaW5lcnMuaW1hZ2Uuc291cmNlIjoiaHR0cHM6Ly9naXRodWIuY29tL0VyY2luRGVkZW9nbHUvcGFja21hdGUiLCJvcmcub3BlbmNvbnRhaW5lcnMuaW1hZ2UudGl0bGUiOiJwYWNrbWF0ZSIsIm9yZy5vcGVuY29udGFpbmVycy5pbWFnZS52ZXJzaW9uIjoidjEuMC4xOCJ9fSwiY3JlYXRlZCI6IjIwMjUtMDctMTZUMDA6Mjk6NTguOTExMzI5NzJaIiwiaGlzdG9yeSI6W3siY3JlYXRlZCI6IjIwMjUtMDctMTVUMTE6MDE6MTZaIiwiY3JlYXRlZF9ieSI6IkFERCBhbHBpbmUtbWluaXJvb3Rmcy0zLjIyLjEteDg2XzY0LnRhci5neiAvICMgYnVpbGRraXQiLCJjb21tZW50IjoiYnVpbGRraXQuZG9ja2VyZmlsZS52MCJ9LHsiY3JlYXRlZCI6IjIwMjUtMDctMTVUMTE6MDE6MTZaIiwiY3JlYXRlZF9ieSI6IkNNRCBbXCIvYmluL3NoXCJdIiwiY29tbWVudCI6ImJ1aWxka2l0LmRvY2tlcmZpbGUudjAiLCJlbXB0eV9sYXllciI6dHJ1ZX0seyJjcmVhdGVkIjoiMjAyNS0wNy0xNlQwMDoyOTozOC45MTk2MzI0NjRaIiwiY3JlYXRlZF9ieSI6IlJVTiAvYmluL3NoIC1jIGFwayAtLW5vLWNhY2hlIGFkZCBjYS1jZXJ0aWZpY2F0ZXMgcDd6aXAgIyBidWlsZGtpdCIsImNvbW1lbnQiOiJidWlsZGtpdC5kb2NrZXJmaWxlLnYwIn0seyJjcmVhdGVkIjoiMjAyNS0wNy0xNlQwMDoyOTo1OC45MTEzMjk3MloiLCJjcmVhdGVkX2J5IjoiQ09QWSAvYXBwL2FyY2hpdmVyIC91c3IvbG9jYWwvYmluLyAjIGJ1aWxka2l0IiwiY29tbWVudCI6ImJ1aWxka2l0LmRvY2tlcmZpbGUudjAifSx7ImNyZWF0ZWQiOiIyMDI1LTA3LTE2VDAwOjI5OjU4LjkxMTMyOTcyWiIsImNyZWF0ZWRfYnkiOiJFTlRSWVBPSU5UIFtcImFyY2hpdmVyXCJdIiwiY29tbWVudCI6ImJ1aWxka2l0LmRvY2tlcmZpbGUudjAiLCJlbXB0eV9sYXllciI6dHJ1ZX1dLCJvcyI6ImxpbnV4Iiwicm9vdGZzIjp7InR5cGUiOiJsYXllcnMiLCJkaWZmX2lkcyI6WyJzaGEyNTY6NDE4ZGNjYjdkODVhNjNhNmFhNTc0NDM5ODQwZjdhNmZhNmZkMjMyMWIzZTIzOTQ1NjhhMzE3NzM1ZTg2N2QzNSIsInNoYTI1Njo3NTE0NmVhNGJiMmMzZDYwNjI3ZmMwY2U1YzVhODkwOTMwNDk2MmE2NDQwM2UxMDFkOGFjOTA3NjUwYzRkOWM2Iiwic2hhMjU2OjFlZWQzZWExNjkzZTJiMGIyMDk0OWExODFiZjcyY2VhZThmYjkxMDA5NTZiMDRiZTg2MGNmYTliMjNhNTViMDkiXX19",
+      "manifest": "eyJzY2hlbWFWZXJzaW9uIjoyLCJtZWRpYVR5cGUiOiJhcHBsaWNhdGlvbi92bmQuZG9ja2VyLmRpc3RyaWJ1dGlvbi5tYW5pZmVzdC52Mitqc29uIiwiY29uZmlnIjp7Im1lZGlhVHlwZSI6ImFwcGxpY2F0aW9uL3ZuZC5kb2NrZXIuY29udGFpbmVyLmltYWdlLnYxK2pzb24iLCJzaXplIjoxMzY4LCJkaWdlc3QiOiJzaGEyNTY6NzNiNjhiZmZkZWYzZGVhNTg0MTIyZjZjYzA1ODY5YTAwNGJhNTVjYzY2ODczNTZjNDFhNjFmNzY1ZGY0MDM0OSJ9LCJsYXllcnMiOlt7Im1lZGlhVHlwZSI6ImFwcGxpY2F0aW9uL3ZuZC5kb2NrZXIuaW1hZ2Uucm9vdGZzLmRpZmYudGFyLmd6aXAiLCJzaXplIjo4NTk2NDgwLCJkaWdlc3QiOiJzaGEyNTY6NDE4ZGNjYjdkODVhNjNhNmFhNTc0NDM5ODQwZjdhNmZhNmZkMjMyMWIzZTIzOTQ1NjhhMzE3NzM1ZTg2N2QzNSJ9LHsibWVkaWFUeXBlIjoiYXBwbGljYXRpb24vdm5kLmRvY2tlci5pbWFnZS5yb290ZnMuZGlmZi50YXIuZ3ppcCIsInNpemUiOjU0OTY4MzIsImRpZ2VzdCI6InNoYTI1Njo3NTE0NmVhNGJiMmMzZDYwNjI3ZmMwY2U1YzVhODkwOTMwNDk2MmE2NDQwM2UxMDFkOGFjOTA3NjUwYzRkOWM2In0seyJtZWRpYVR5cGUiOiJhcHBsaWNhdGlvbi92bmQuZG9ja2VyLmltYWdlLnJvb3Rmcy5kaWZmLnRhci5nemlwIiwic2l6ZSI6MTk3Nzg1NiwiZGlnZXN0Ijoic2hhMjU2OjJkMjIzNGQzNjRmZDZjZGE4MTg2Zjc2MjFhYjA2MTA2NWM2YzZjOTIwOTc3YTAxNTUzYTRlYzU3Mjk4M2E3YjUifV19",
+      "config": "eyJhcmNoaXRlY3R1cmUiOiJhbWQ2NCIsImNvbmZpZyI6eyJFbnYiOlsiUEFUSD0vdXNyL2xvY2FsL3NiaW46L3Vzci9sb2NhbC9iaW46L3Vzci9zYmluOi91c3IvYmluOi9zYmluOi9iaW4iXSwiRW50cnlwb2ludCI6WyJhcmNoaXZlciJdLCJXb3JraW5nRGlyIjoiLyIsIkxhYmVscyI6eyJvcmcub3BlbmNvbnRhaW5lcnMuaW1hZ2Uuc291cmNlIjoiaHR0cHM6Ly9naXRodWIuY29tL0VyY2luRGVkZW9nbHUvcGFja21hdGUiLCJvcmcub3BlbmNvbnRhaW5lcnMuaW1hZ2UudGl0bGUiOiJwYWNrbWF0ZSIsIm9yZy5vcGVuY29udGFpbmVycy5pbWFnZS52ZXJzaW9uIjoidjEuMC4xOSJ9fSwiY3JlYXRlZCI6IjIwMjUtMDgtMDdUMDA6MzE6MzAuMDU0MDM5MTE1WiIsImhpc3RvcnkiOlt7ImNyZWF0ZWQiOiIyMDI1LTA3LTE1VDExOjAxOjE2WiIsImNyZWF0ZWRfYnkiOiJBREQgYWxwaW5lLW1pbmlyb290ZnMtMy4yMi4xLXg4Nl82NC50YXIuZ3ogLyAjIGJ1aWxka2l0IiwiY29tbWVudCI6ImJ1aWxka2l0LmRvY2tlcmZpbGUudjAifSx7ImNyZWF0ZWQiOiIyMDI1LTA3LTE1VDExOjAxOjE2WiIsImNyZWF0ZWRfYnkiOiJDTUQgW1wiL2Jpbi9zaFwiXSIsImNvbW1lbnQiOiJidWlsZGtpdC5kb2NrZXJmaWxlLnYwIiwiZW1wdHlfbGF5ZXIiOnRydWV9LHsiY3JlYXRlZCI6IjIwMjUtMDctMTZUMDA6Mjk6MzguOTE5NjMyNDY0WiIsImNyZWF0ZWRfYnkiOiJSVU4gL2Jpbi9zaCAtYyBhcGsgLS1uby1jYWNoZSBhZGQgY2EtY2VydGlmaWNhdGVzIHA3emlwICMgYnVpbGRraXQiLCJjb21tZW50IjoiYnVpbGRraXQuZG9ja2VyZmlsZS52MCJ9LHsiY3JlYXRlZCI6IjIwMjUtMDgtMDdUMDA6MzE6MzAuMDU0MDM5MTE1WiIsImNyZWF0ZWRfYnkiOiJDT1BZIC9hcHAvYXJjaGl2ZXIgL3Vzci9sb2NhbC9iaW4vICMgYnVpbGRraXQiLCJjb21tZW50IjoiYnVpbGRraXQuZG9ja2VyZmlsZS52MCJ9LHsiY3JlYXRlZCI6IjIwMjUtMDgtMDdUMDA6MzE6MzAuMDU0MDM5MTE1WiIsImNyZWF0ZWRfYnkiOiJFTlRSWVBPSU5UIFtcImFyY2hpdmVyXCJdIiwiY29tbWVudCI6ImJ1aWxka2l0LmRvY2tlcmZpbGUudjAiLCJlbXB0eV9sYXllciI6dHJ1ZX1dLCJvcyI6ImxpbnV4Iiwicm9vdGZzIjp7InR5cGUiOiJsYXllcnMiLCJkaWZmX2lkcyI6WyJzaGEyNTY6NDE4ZGNjYjdkODVhNjNhNmFhNTc0NDM5ODQwZjdhNmZhNmZkMjMyMWIzZTIzOTQ1NjhhMzE3NzM1ZTg2N2QzNSIsInNoYTI1Njo3NTE0NmVhNGJiMmMzZDYwNjI3ZmMwY2U1YzVhODkwOTMwNDk2MmE2NDQwM2UxMDFkOGFjOTA3NjUwYzRkOWM2Iiwic2hhMjU2OjJkMjIzNGQzNjRmZDZjZGE4MTg2Zjc2MjFhYjA2MTA2NWM2YzZjOTIwOTc3YTAxNTUzYTRlYzU3Mjk4M2E3YjUiXX19",
       "repoDigests": [
-        "ghcr.io/ercindedeoglu/packmate@sha256:08e499a49aca84d3db747b028c884e36a4b5f59ff955f5127149bc11782a3812"
+        "ghcr.io/ercindedeoglu/packmate@sha256:bcadf2f3779e12e32e672916a140ca393618ee587b74837aa6545fc67ee4a6f6"
       ],
       "architecture": "amd64",
       "os": "linux",
       "labels": {
         "org.opencontainers.image.source": "https://github.com/ErcinDedeoglu/packmate",
         "org.opencontainers.image.title": "packmate",
-        "org.opencontainers.image.version": "v1.0.18"
+        "org.opencontainers.image.version": "v1.0.19"
       }
     }
   },
